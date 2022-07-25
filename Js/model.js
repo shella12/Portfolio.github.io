@@ -1,5 +1,6 @@
 const projectBtn = document.querySelectorAll('.projectBtn');
 const imageArray = [];
+let counter=0;
 const body = document.querySelector('body');
 const imagesSrc = ['./images/project1.png', './images/project5.png', './images/project2.png', './images/project4.png', './images/project3.png', './images/project6.png'];
 const techTags = ['HTML/CSS', 'Ruby on Rails', 'JavaScript'];
@@ -23,6 +24,7 @@ projectBtn.forEach((element, index) => {
     /* eslint-disable no-unused-vars */
     popClose.addEventListener('click', ((event) => {
       body.classList.remove('active');
+      imageArray.length=0;
       container.remove();
     }));
     pop.appendChild(popClose);
@@ -55,6 +57,7 @@ projectBtn.forEach((element, index) => {
     for (let i = 0; i < 4; i++) {
       const image = document.createElement('img');
       imageArray.push(image);
+      console.log(imageArray);
       image.classList = 'pop-img-loop';
       image.src = popImage.src;
       popImageContainer.appendChild(image);
